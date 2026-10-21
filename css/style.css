@@ -204,3 +204,22 @@ footer {
         min-width: 0;
     }
 }
+/* Student image gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+}
+
+.image-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    flex: 1 1 250px;
+    border-radius: 8px;
+    object-fit: cover;
+}
