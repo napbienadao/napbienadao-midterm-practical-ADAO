@@ -1,0 +1,206 @@
+/* 1. Design tokens */
+:root {
+    /* Colours */
+    --color-primary: #174a6e;
+    --color-secondary: #287271;
+    --color-background: #f4f7fa;
+    --color-surface: #ffffff;
+    --color-text: #243447;
+    --color-border: #d5dee7;
+
+    /* Spacing scale */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+
+    /* Type scale */
+    --text-small: 0.875rem;
+    --text-base: 1rem;
+    --text-large: 1.25rem;
+    --text-heading: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+header {
+    padding: var(--space-5) var(--space-2);
+    text-align: center;
+    color: white;
+    background: var(--color-primary);
+}
+
+header h1 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-heading);
+}
+
+header p {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    background: var(--color-secondary);
+}
+
+nav a {
+    padding: var(--space-1) var(--space-2);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-primary);
+    background: white;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+main {
+    width: min(100% - 2rem, 1100px);
+    margin: var(--space-4) auto;
+}
+
+section {
+    margin-bottom: var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--color-primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-wrap: anywhere;
+}
+
+caption {
+    margin-bottom: var(--space-1);
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+th {
+    color: white;
+    background: var(--color-primary);
+}
+
+tbody tr:nth-child(even) {
+    background: #edf3f7;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    padding: var(--space-2);
+    font: inherit;
+    border: 1px solid #75879a;
+    border-radius: 4px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid #287271;
+    outline-offset: 2px;
+}
+
+button {
+    margin-top: var(--space-1);
+    color: white;
+    background: var(--color-primary);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #103750;
+}
+
+footer {
+    padding: var(--space-3);
+    color: white;
+    text-align: center;
+    background: var(--color-primary);
+}
+
+/* 2. Tablet layout */
+@media (min-width: 600px) {
+    header {
+        padding: var(--space-5);
+    }
+
+    section {
+        padding: var(--space-4);
+    }
+}
+
+/* 3. Desktop layout */
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-3);
+    }
+
+    #home {
+        grid-column: 1 / -1;
+    }
+
+    section {
+        margin-bottom: 0;
+    }
+
+    #resources,
+    #contact {
+        min-width: 0;
+    }
+}
